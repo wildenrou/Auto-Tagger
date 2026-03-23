@@ -21,19 +21,13 @@ Works hand-in-hand with [Seasonal Visibility](https://github.com/jshafer813/Seas
 
 ## 📦 Installation
 
-1. Download `Jellyfin.Plugin.AutoTagger.dll` from the [Releases](https://github.com/jshafer813/Auto-Tagger/releases) page
-2. Create a folder `plugins/AutoTagger` inside your Jellyfin data directory
-3. Copy the DLL into that folder
-4. Restart Jellyfin
-5. Navigate to **Dashboard → Plugins → Auto Tagger** to configure
-
-### Jellyfin data directory locations
-
-| OS | Path |
-|---|---|
-| Linux | `/var/lib/jellyfin/plugins/AutoTagger/` |
-| Docker | `/config/plugins/AutoTagger/` |
-| Windows | `%APPDATA%\Jellyfin\plugins\AutoTagger\` |
+1. Go to **Dashboard → Plugins → Repositories** and add:
+```
+https://raw.githubusercontent.com/jshafer813/Auto-Tagger/main/manifest.json
+```
+2. Go to **Dashboard → Plugins → Catalog** and install **Auto Tagger**
+3. Restart Jellyfin
+4. Navigate to **Dashboard → Plugins → Auto Tagger** to configure
 
 ---
 
@@ -62,7 +56,6 @@ Tags are plain Jellyfin tags and work anywhere tags are accepted — user polici
 ## ⚙️ Requirements
 
 - Jellyfin **10.11.6+**
-- .NET 9 (for building from source)
 
 ---
 
