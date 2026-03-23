@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Auto Tagger</title>
+</head>
+<body>
+<div id="AutoTaggerConfigPage" data-role="page" class="page type-interior pluginConfigurationPage">
+
+    <div data-role="content">
+        <div class="content-primary">
+
+            <div class="sectionTitleContainer flex align-items-center">
+                <h2 class="sectionTitle">Auto Tagger</h2>
+            </div>
+
+            <p class="fieldDescription" style="margin-bottom:1.5em;">
+                Automatically applies genre, decade, rating, language and resolution tags
+                to your movies and series. Works hand-in-hand with <strong>Seasonal Visibility</strong>.
+            </p>
+
+            <!-- General -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">General</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkTagMovies" type="checkbox" /> Tag Movies</label>
+                </div>
+                <div class="checkboxContainer">
+                    <label><input id="chkTagSeries" type="checkbox" /> Tag TV Series</label>
+                </div>
+                <div class="checkboxContainer">
+                    <label><input id="chkRemoveStale" type="checkbox" /> Remove stale auto-tags before re-tagging</label>
+                    <div class="fieldDescription">Removes tags previously applied by Auto Tagger before reapplying.</div>
+                </div>
+            </div>
+
+            <!-- Seasonal -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Seasonal Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableSeasonal" type="checkbox" /> Enable seasonal tags</label>
+                </div>
+                <p class="fieldDescription">Tags items based on their premiere/release month.</p>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtSpringTag">Spring tag name</label>
+                    <input id="txtSpringTag" type="text" class="emby-input" />
+                    <div class="fieldDescription">Default: season-spring | Months default: 3,4,5</div>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtSpringMonths">Spring months (comma-separated 1-12)</label>
+                    <input id="txtSpringMonths" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtSummerTag">Summer tag name</label>
+                    <input id="txtSummerTag" type="text" class="emby-input" />
+                    <div class="fieldDescription">Default: season-summer | Months default: 6,7,8</div>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtSummerMonths">Summer months</label>
+                    <input id="txtSummerMonths" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtFallTag">Fall tag name</label>
+                    <input id="txtFallTag" type="text" class="emby-input" />
+                    <div class="fieldDescription">Default: season-fall | Months default: 9,10,11</div>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtFallMonths">Fall months</label>
+                    <input id="txtFallMonths" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtWinterTag">Winter tag name</label>
+                    <input id="txtWinterTag" type="text" class="emby-input" />
+                    <div class="fieldDescription">Default: season-winter | Months default: 12,1,2</div>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtWinterMonths">Winter months</label>
+                    <input id="txtWinterMonths" type="text" class="emby-input" />
+                </div>
+            </div>
+
+            <!-- Genre -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Genre Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableGenre" type="checkbox" /> Enable genre tags</label>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtGenreMappings">Genre to Tag mappings</label>
+                    <textarea id="txtGenreMappings" rows="12" style="width:100%; font-family:monospace; font-size:0.85em;"></textarea>
+                    <div class="fieldDescription">One mapping per line: <code>Genre Name=tag-name</code>. Case-insensitive.</div>
+                </div>
+            </div>
+
+            <!-- Decade -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Decade Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableDecade" type="checkbox" /> Enable decade tags</label>
+                </div>
+                <p class="fieldDescription">Tags items based on their release year.</p>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecadePre50">Pre-1950 tag</label>
+                    <input id="txtDecadePre50" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade50s">1950s tag</label>
+                    <input id="txtDecade50s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade60s">1960s tag</label>
+                    <input id="txtDecade60s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade70s">1970s tag</label>
+                    <input id="txtDecade70s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade80s">1980s tag</label>
+                    <input id="txtDecade80s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade90s">1990s tag</label>
+                    <input id="txtDecade90s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade00s">2000s tag</label>
+                    <input id="txtDecade00s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade10s">2010s tag</label>
+                    <input id="txtDecade10s" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtDecade20s">2020s tag</label>
+                    <input id="txtDecade20s" type="text" class="emby-input" />
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Rating Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableRating" type="checkbox" /> Enable rating tags</label>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtRatingMappings">Rating to Tag mappings</label>
+                    <textarea id="txtRatingMappings" rows="10" style="width:100%; font-family:monospace; font-size:0.85em;"></textarea>
+                    <div class="fieldDescription">One mapping per line: <code>OfficialRating=tag-name</code>. e.g. <code>PG-13=tag-rated-pg13</code></div>
+                </div>
+            </div>
+
+            <!-- Language -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Language Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableLanguage" type="checkbox" /> Enable language tags</label>
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtLanguageMappings">Language to Tag mappings</label>
+                    <textarea id="txtLanguageMappings" rows="10" style="width:100%; font-family:monospace; font-size:0.85em;"></textarea>
+                    <div class="fieldDescription">One mapping per line: <code>iso639code=tag-name</code>. e.g. <code>eng=tag-lang-english</code></div>
+                </div>
+            </div>
+
+            <!-- Resolution -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle checkboxListSectionTitle">Resolution Tags</h3>
+                <div class="checkboxContainer">
+                    <label><input id="chkEnableResolution" type="checkbox" /> Enable resolution tags</label>
+                </div>
+                <p class="fieldDescription">Tags items based on video stream height.</p>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtResSd">SD tag (under 720p)</label>
+                    <input id="txtResSd" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtResHd">HD tag (720p)</label>
+                    <input id="txtResHd" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtResFhd">Full HD tag (1080p)</label>
+                    <input id="txtResFhd" type="text" class="emby-input" />
+                </div>
+                <div class="inputContainer">
+                    <label class="inputLabel" for="txtRes4k">4K tag (2160p+)</label>
+                    <input id="txtRes4k" type="text" class="emby-input" />
+                </div>
+            </div>
+
+            <!-- Preview -->
+            <div class="verticalSection">
+                <h3 class="sectionTitle">Dry Run Preview</h3>
+                <p class="fieldDescription">See what tags would be applied without writing anything to the library.</p>
+                <button id="btnPreview" type="button" class="raised emby-button block">
+                    <span>Run Preview</span>
+                </button>
+                <div id="previewResults" style="display:none; margin-top:1em;">
+                    <p><strong>Items scanned:</strong> <span id="previewTotal"></span></p>
+                    <p><strong>Items that would be tagged:</strong> <span id="previewAffected"></span></p>
+                    <table class="tblConfigTable" style="width:100%; margin-top:0.5em;">
+                        <thead><tr>
+                            <th style="text-align:left;">Tag</th>
+                            <th style="text-align:right;">Items</th>
+                        </tr></thead>
+                        <tbody id="previewTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Save -->
+            <div style="margin-top:2em;">
+                <button id="btnSave" type="button" class="raised button-submit block emby-button">
+                    <span>Save Settings</span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+    (function () {
+        'use strict';
+
+        var PLUGIN_ID = 'a1b2c3d4-e5f6-7890-abcd-ef1234567890';
+
+        function id(x) { return document.getElementById(x); }
+
+        function populateForm(cfg) {
+            id('chkTagMovies').checked        = cfg.TagMovies === true;
+            id('chkTagSeries').checked        = cfg.TagSeries === true;
+            id('chkRemoveStale').checked      = cfg.RemoveStaleAutoTags === true;
+            id('chkEnableSeasonal').checked   = cfg.EnableSeasonalTags === true;
+            id('txtSpringTag').value          = cfg.SpringTag || '';
+            id('txtSpringMonths').value       = cfg.SpringMonths || '';
+            id('txtSummerTag').value          = cfg.SummerTag || '';
+            id('txtSummerMonths').value       = cfg.SummerMonths || '';
+            id('txtFallTag').value            = cfg.FallTag || '';
+            id('txtFallMonths').value         = cfg.FallMonths || '';
+            id('txtWinterTag').value          = cfg.WinterTag || '';
+            id('txtWinterMonths').value       = cfg.WinterMonths || '';
+            id('chkEnableGenre').checked      = cfg.EnableGenreTags === true;
+            id('txtGenreMappings').value      = cfg.GenreTagMappings || '';
+            id('chkEnableDecade').checked     = cfg.EnableDecadeTags === true;
+            id('txtDecadePre50').value        = cfg.DecadePreFifties || '';
+            id('txtDecade50s').value          = cfg.Decade50s || '';
+            id('txtDecade60s').value          = cfg.Decade60s || '';
+            id('txtDecade70s').value          = cfg.Decade70s || '';
+            id('txtDecade80s').value          = cfg.Decade80s || '';
+            id('txtDecade90s').value          = cfg.Decade90s || '';
+            id('txtDecade00s').value          = cfg.Decade00s || '';
+            id('txtDecade10s').value          = cfg.Decade10s || '';
+            id('txtDecade20s').value          = cfg.Decade20s || '';
+            id('chkEnableRating').checked     = cfg.EnableRatingTags === true;
+            id('txtRatingMappings').value     = cfg.RatingMappings || '';
+            id('chkEnableLanguage').checked   = cfg.EnableLanguageTags === true;
+            id('txtLanguageMappings').value   = cfg.LanguageMappings || '';
+            id('chkEnableResolution').checked = cfg.EnableResolutionTags === true;
+            id('txtResSd').value              = cfg.ResolutionSdTag || '';
+            id('txtResHd').value              = cfg.ResolutionHdTag || '';
+            id('txtResFhd').value             = cfg.ResolutionFhdTag || '';
+            id('txtRes4k').value              = cfg.Resolution4kTag || '';
+        }
+
+        function collectConfig() {
+            return {
+                TagMovies:            id('chkTagMovies').checked,
+                TagSeries:            id('chkTagSeries').checked,
+                RemoveStaleAutoTags:  id('chkRemoveStale').checked,
+                EnableSeasonalTags:   id('chkEnableSeasonal').checked,
+                SpringTag:            id('txtSpringTag').value.trim(),
+                SpringMonths:         id('txtSpringMonths').value.trim(),
+                SummerTag:            id('txtSummerTag').value.trim(),
+                SummerMonths:         id('txtSummerMonths').value.trim(),
+                FallTag:              id('txtFallTag').value.trim(),
+                FallMonths:           id('txtFallMonths').value.trim(),
+                WinterTag:            id('txtWinterTag').value.trim(),
+                WinterMonths:         id('txtWinterMonths').value.trim(),
+                EnableGenreTags:      id('chkEnableGenre').checked,
+                GenreTagMappings:     id('txtGenreMappings').value,
+                EnableDecadeTags:     id('chkEnableDecade').checked,
+                DecadePreFifties:     id('txtDecadePre50').value.trim(),
+                Decade50s:            id('txtDecade50s').value.trim(),
+                Decade60s:            id('txtDecade60s').value.trim(),
+                Decade70s:            id('txtDecade70s').value.trim(),
+                Decade80s:            id('txtDecade80s').value.trim(),
+                Decade90s:            id('txtDecade90s').value.trim(),
+                Decade00s:            id('txtDecade00s').value.trim(),
+                Decade10s:            id('txtDecade10s').value.trim(),
+                Decade20s:            id('txtDecade20s').value.trim(),
+                EnableRatingTags:     id('chkEnableRating').checked,
+                RatingMappings:       id('txtRatingMappings').value,
+                EnableLanguageTags:   id('chkEnableLanguage').checked,
+                LanguageMappings:     id('txtLanguageMappings').value,
+                EnableResolutionTags: id('chkEnableResolution').checked,
+                ResolutionSdTag:      id('txtResSd').value.trim(),
+                ResolutionHdTag:      id('txtResHd').value.trim(),
+                ResolutionFhdTag:     id('txtResFhd').value.trim(),
+                Resolution4kTag:      id('txtRes4k').value.trim()
+            };
+        }
+
+        function loadConfig() {
+            ApiClient.getPluginConfiguration(PLUGIN_ID).then(function (cfg) {
+                populateForm(cfg);
+            });
+        }
+
+        id('btnSave').addEventListener('click', function () {
+            Dashboard.showLoadingMsg();
+            var cfg = collectConfig();
+            ApiClient.updatePluginConfiguration(PLUGIN_ID, cfg).then(function () {
+                Dashboard.hideLoadingMsg();
+                Dashboard.alert('Settings saved.');
+            });
+        });
+
+        id('btnPreview').addEventListener('click', function () {
+            Dashboard.showLoadingMsg();
+            var url = ApiClient.serverAddress() + '/AutoTagger/Preview';
+            ApiClient.ajax({ url: url, type: 'GET', dataType: 'json' }).then(function (result) {
+                Dashboard.hideLoadingMsg();
+                id('previewTotal').textContent    = result.totalItems;
+                id('previewAffected').textContent = result.itemsAffected;
+                var tbody = id('previewTableBody');
+                tbody.innerHTML = '';
+                (result.tagBreakdown || []).forEach(function (row) {
+                    var tr = document.createElement('tr');
+                    var tdTag = document.createElement('td');
+                    tdTag.textContent = row.tag;
+                    tdTag.style.padding = '2px 8px';
+                    var tdCount = document.createElement('td');
+                    tdCount.textContent = row.count;
+                    tdCount.style.cssText = 'text-align:right; padding:2px 8px';
+                    tr.appendChild(tdTag);
+                    tr.appendChild(tdCount);
+                    tbody.appendChild(tr);
+                });
+                id('previewResults').style.display = '';
+            }).catch(function (e) {
+                Dashboard.hideLoadingMsg();
+                Dashboard.alert('Preview failed: ' + e.message);
+            });
+        });
+
+        document.getElementById('AutoTaggerConfigPage').addEventListener('pageshow', loadConfig);
+
+    }());
+    </script>
+
+</div>
+</body>
+</html>
