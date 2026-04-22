@@ -1,5 +1,8 @@
 bin/
 obj/
+.dotnet/
+dist/
+dotnet-install.ps1
 *.user
 .DS_Store
 *.pdb
