@@ -25,6 +25,12 @@ Works hand-in-hand with [Seasonal Visibility](https://github.com/jshafer813/Seas
 ```
 https://raw.githubusercontent.com/wildenrou/Auto-Tagger/main/manifest.json
 ```
+
+If Jellyfin still shows a cached repository result, use the 10.11-specific manifest URL instead:
+
+```text
+https://raw.githubusercontent.com/wildenrou/Auto-Tagger/main/manifest-10.11.json
+```
 2. Go to **Dashboard -> Plugins -> Catalog** and install **Auto Tagger**
 3. Restart Jellyfin
 4. Navigate to **Dashboard -> Plugins -> Auto Tagger** to configure
