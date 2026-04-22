@@ -1,0 +1,21 @@
+[
+  {
+    "guid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Auto Tagger",
+    "description": "Automatically applies genre, decade, rating, language, and resolution tags to your Jellyfin library. Works hand-in-hand with Seasonal Visibility.",
+    "overview": "Automatically applies genre, decade, rating, language, and resolution tags to your Jellyfin library.",
+    "owner": "jshafer813",
+    "category": "Metadata",
+    "imageUrl": "",
+    "versions": [
+      {
+        "version": "1.0.1.0",
+        "changelog": "Rebuild for Jellyfin 10.11.8 and package as a Jellyfin plugin zip.",
+        "targetAbi": "10.11.8.0",
+        "sourceUrl": "https://github.com/wildenrou/Auto-Tagger/releases/download/v1.0.1/Jellyfin.Plugin.AutoTagger.zip",
+        "checksum": "89d9eb2815ba233ef8e26af0e268aed7",
+        "timestamp": "2026-04-21T00:00:00Z"
+      }
+    ]
+  }
+]

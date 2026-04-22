@@ -37,6 +37,12 @@ Current cache-busted 10.11 manifest:
 ```text
 https://raw.githubusercontent.com/wildenrou/Auto-Tagger/main/manifest-10.11-v2.json
 ```
+
+Patch-specific 10.11.8 manifest:
+
+```text
+https://raw.githubusercontent.com/wildenrou/Auto-Tagger/main/manifest-10.11.8.json
+```
 2. Go to **Dashboard -> Plugins -> Catalog** and install **Auto Tagger**
 3. Restart Jellyfin
 4. Navigate to **Dashboard -> Plugins -> Auto Tagger** to configure
