@@ -4,7 +4,7 @@
     "name": "Auto Tagger",
     "description": "Automatically applies genre, decade, rating, language, and resolution tags to your Jellyfin library. Works hand-in-hand with Seasonal Visibility.",
     "overview": "Automatically applies genre, decade, rating, language, and resolution tags to your Jellyfin library.",
-    "author": "jshafer813",
+    "owner": "jshafer813",
     "category": "Metadata",
     "imageUrl": "",
     "versions": [
